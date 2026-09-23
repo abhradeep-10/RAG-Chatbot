@@ -58,11 +58,3 @@ CPU. I moved to Qwen2.5-3B-Instruct and `ms-marco-MiniLM-L-6-v2` (~90 MB), which
 on the quality/latency curve for this assignment; the model is a config value, so a stronger one
 can be used where the hardware allows.
 
-## A note on the evaluation
-
-My first evaluation run reported a 94% false-refusal rate. Before changing any thresholds I read
-the per-item records and noticed a citation referring to page 6 of a research paper - I had pointed
-`--pdf` at the wrong file, so the system was being asked 20 questions about a document that did not
-contain the answers. The refusals were correct behaviour. I re-ran it against the right document
-and added the top retrieved sections to every evaluation record so that this failure mode is
-visible immediately rather than being mistaken for a quality problem.
